@@ -31,6 +31,8 @@ public class CommandExecutor {
             case REPORT:
                 positionProcessor.report();
                 break;
+            default:
+                break;
         }
     }
 }
