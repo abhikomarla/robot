@@ -14,7 +14,7 @@ public class Validator {
         if (null != commands && commands.length != 2) {
             return false;
         }
-        if (null != commands[0] && "PLACE".equalsIgnoreCase(commands[0])) {
+        if (null != commands && "PLACE".equalsIgnoreCase(commands[0])) {
             String[] coordinates = commands[1].split(",");
             if (null != coordinates && 3 != coordinates.length) {
                 return false;
