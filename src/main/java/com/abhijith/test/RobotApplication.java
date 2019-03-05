@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan(basePackages = {"com.abhijith.test"})
 public class RobotApplication {
 
-    public static void main(String args[]) {
+    public static void main(final String[] args) {
 
         ApplicationContext context = new AnnotationConfigApplicationContext(RobotApplication.class);
 

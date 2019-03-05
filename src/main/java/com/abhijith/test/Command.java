@@ -42,11 +42,11 @@ public class Command {
         this.direction = Direction.valueOf(direction.toUpperCase());
     }
 
-    public static enum Direction {
+    public enum Direction {
         NORTH, SOUTH, EAST, WEST
     }
 
-    public static enum Instruction {
+    public enum Instruction {
 
         PLACE, MOVE, LEFT, RIGHT, REPORT;
     }

@@ -2,6 +2,8 @@ package com.abhijith.test;
 
 import org.springframework.stereotype.Component;
 
+import java.util.logging.Logger;
+
 @Component
 public class PositionProcessor {
 
@@ -10,6 +12,8 @@ public class PositionProcessor {
     private int y = -1;
 
     private Command.Direction direction;
+
+    private Logger logger = Logger.getLogger(this.getClass().getName());
 
     public void place(final int x, final int y, final Command.Direction direction) {
 
@@ -92,7 +96,7 @@ public class PositionProcessor {
 
     public void report() {
         //print the current position
-        System.out.println(this.x + "," + this.y + "," + this.direction.name());
+        logger.info(this.x + "," + this.y + "," + this.direction.name());
     }
 
     public int getX() {

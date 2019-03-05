@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Component
 public class RobotOrchestrator {
@@ -21,9 +23,11 @@ public class RobotOrchestrator {
 
     private boolean validStart;
 
+    private Logger logger = Logger.getLogger(this.getClass().getName());
+
     public void start() {
         do {
-            System.out.print("Enter your command : ");
+            logger.info("Enter your command : ");
             String input = scanner.nextLine();
             processInput(input);
         } while (true);
@@ -50,7 +54,7 @@ public class RobotOrchestrator {
                 validStart = true;
             }
         } catch(Exception e) {
-            //ignore
+            logger.log(Level.WARNING, "Exception {}", e.getMessage());
         }
     }
 }
